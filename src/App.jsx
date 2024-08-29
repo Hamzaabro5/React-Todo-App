@@ -7,7 +7,11 @@ const App = ()=> {
 
   const addTodo =(event)=>{
     event.preventDefault()
-    todo.push(todoValue.current.value)
+    if (todoValue.current.value === ``) {
+      alert(`Please Enter Your todo`);
+    } else {   
+      todo.push(todoValue.current.value)
+    }
     setTodo([...todo])
     
     todoValue.current.value = ``
